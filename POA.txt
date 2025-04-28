@@ -1,100 +1,100 @@
-Handlingsplan for Voxie
+Plan of Action for Voxie
 
 ____________________________________________________________________________________________________________________________________________________
-Implementer tekstchat-funktion
-Mål: Giv folk mulighed for at sende og modtage tekstbeskeder i realtid.
+Implement Text Chat Functionality
+Goal: Enable users to send and receive text messages in real-time.
 Steps:
 
-WebSocket-beskedhåndtering:
-Udvid WebSocketHandler-klassen til at håndtere tekstbeskeder.
-Definer en protokol til afsendelse og modtagelse af beskeder (f.eks. JSON-format med felter som type, afsender, besked osv.).
+WebSocket Message Handling:
+Extend the `WebSocketHandler` class to handle text messages.
+Define a protocol for sending and receiving messages (e.g., JSON format with fields like type, sender, message, etc.).
 
-Udsendelse af beskeder:
-Implementer en mekanisme til at udsende beskeder til alle tilsluttede klienter eller specifikke grupper (f.eks. chatrum).
+Broadcasting Messages:
+Implement a mechanism to broadcast messages to all connected clients or specific groups (e.g., chat rooms).
 
-Klientside-integration:
-Lav en simpel klient (f.eks. med JavaScript og HTML), der forbinder til WebSocket-serveren og sender/modtager beskeder.
+Client-Side Integration:
+Create a simple client (e.g., using JavaScript and HTML) that connects to the WebSocket server and sends/receives messages.
 
-Gem beskeder:
-Gem chathistorik i en database (f.eks. SQLite for enkelhed), så den kan hentes frem senere.
+Store Messages:
+Save chat history in a database (e.g., SQLite for simplicity) so it can be retrieved later.
 ____________________________________________________________________________________________________________________________________________________
 
 
 ____________________________________________________________________________________________________________________________________________________
-Tilføj stemmeopkaldsfunktion
-Mål: Muliggør stemmekommunikation i realtid mellem brugere.
+Add Voice Call Functionality
+Goal: Enable real-time voice communication between users.
 Steps:
 
-Vælg protokol:
-Brug WebRTC til peer-to-peer stemmekommunikation.
+Choose Protocol:
+Use WebRTC for peer-to-peer voice communication.
 
-Signaleringsserver:
-Implementer en signaleringsserver med WebSockets til at udveksle WebRTC offer/answer og ICE-kandidater mellem klienter.
+Signaling Server:
+Implement a signaling server using WebSockets to exchange WebRTC offer/answer and ICE candidates between clients.
 
-Klientside-integration:
-Brug WebRTC API'er i browseren eller biblioteker som simple-peer til at etablere stemmeopkald.
+Client-Side Integration:
+Use WebRTC APIs in the browser or libraries like `simple-peer` to establish voice calls.
 
-STUN/TURN-servere:
-Brug en STUN-server til NAT-traversering. Hvis nødvendigt, opsæt en TURN-server (f.eks. Coturn) til at videresende medier i restriktive netværksmiljøer.
+STUN/TURN Servers:
+Use a STUN server for NAT traversal. If necessary, set up a TURN server (e.g., Coturn) to relay media in restrictive network environments.
 ____________________________________________________________________________________________________________________________________________________
 
 
 ____________________________________________________________________________________________________________________________________________________
-Brugerautentificering og -administration
-Mål: Sikr, at kun autoriserede brugere har adgang til appen.
+User Authentication and Management
+Goal: Ensure only authorized users can access the app.
 Steps:
 
-Brugerregistrering og login:
-Implementer et simpelt brugerregistrerings- og loginsystem ved hjælp af JWT til autentificering.
+User Registration and Login:
+Implement a simple user registration and login system using JWT for authentication.
 
-Brugerroller:
-Tilføj roller (f.eks. admin, bruger) til styring af rettigheder.
+User Roles:
+Add roles (e.g., admin, user) to manage permissions.
 
-Vennesystem:
-Giv brugere mulighed for at tilføje/fjerne venner og administrere private chats.
+Friend System:
+Allow users to add/remove friends and manage private chats.
 ____________________________________________________________________________________________________________________________________________________
 
 
 ____________________________________________________________________________________________________________________________________________________
-UI/UX-design
-Mål: Skab en enkel og intuitiv brugergrænseflade.
+UI/UX Design
+Goal: Create a simple and intuitive user interface.
 Steps:
 
-Frontend-framework:
-Brug et frontend-framework som React, Vue eller ren HTML/CSS/JavaScript for enkelhed.
+Frontend Framework:
+Use a frontend framework like React, Vue, or plain HTML/CSS/JavaScript for simplicity.
 
-Chat-interface:
-Design en chatgrænseflade med beskedindtastningsfelt, beskedhistorik og brugerliste.
+Chat Interface:
+Design a chat interface with a message input field, message history, and user list.
 
-Interface til stemmeopkald:
-Tilføj knapper til at starte/stoppe opkald og administrere lydindstillinger.
+Voice Call Interface:
+Add buttons to start/stop calls and manage audio settings.
 ____________________________________________________________________________________________________________________________________________________
 
 
 ____________________________________________________________________________________________________________________________________________________
-Skalérbarhed og hosting
-Mål: Forbered appen til potentiel vækst.
-Trin:
+Scalability and Hosting
+Goal: Prepare the app for potential growth.
+Steps:
 
 Hosting:
-Host appen på en cloud-platform som Azure, AWS eller DigitalOcean.
+Host the app on a cloud platform like Azure, AWS, or DigitalOcean.
 
 Database:
-Brug en letvægtsdatabase som SQLite nu, og migrér senere til en mere skalerbar database (f.eks. PostgreSQL), hvis nødvendigt.
+Use a lightweight database like SQLite for now, and migrate to a more scalable database (e.g., PostgreSQL) if needed.
 
-Load balancing:
-Hvis skalering bliver nødvendig, implementér load balancing til WebSocket-forbindelser.
+Load Balancing:
+If scaling becomes necessary, implement load balancing for WebSocket connections.
 ____________________________________________________________________________________________________________________________________________________
 
 
 ____________________________________________________________________________________________________________________________________________________
-Fremtidige funktioner
-Videokald og skærmdeling:
-Udvid WebRTC-implementeringen til at understøtte videostreaming og skærmdeling.
+Future Features
+Video Calls and Screen Sharing:
+Extend the WebRTC implementation to support video streaming and screen sharing.
 
-Brugertilpassede temaer:
-Lad brugere tilpasse appens udseende (f.eks. lys/mørk tilstand, brugerdefinerede farver).
+Customizable Themes:
+Allow users to customize the app's appearance (e.g., light/dark mode, custom colors).
 
-Mobilapp:
-Udvikl en mobilversion af appen ved hjælp af frameworks som React Native eller Flutter.
+Mobile App:
+Develop a mobile version of the app using frameworks like React Native or Flutter.
 ____________________________________________________________________________________________________________________________________________________
